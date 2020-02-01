@@ -5,19 +5,23 @@ Created on Thu Jan 23 07:49:01 2020
 @author: User
 """
 import array as arr
-mystring = ""
 input ="The sunset sets at twelve o'clock"
-input = input.lower()
-a=arr.array('b')
-for character in input:
-    if character != ' ':
-        number = ord(character) - 96
-        if 0<number<=26:
-            a.extend([number])
-            print(a)
 
-for digit in a:
-    mystring += str(digit)
-    mystring += ' '
-print(mystring)    
+def alphabet_position(input):
+    alphabet = ""
+    input = input.lower()
+    a=arr.array('b')
+    for character in input:
+        if character != ' ':
+            number = ord(character) - 96
+            if 0<number<=26:
+                a.extend([number])
+
+    for digit in a:
+        alphabet += str(digit)
+        alphabet += ' '   
+    return alphabet.strip()
+
+alphabet=alphabet_position(input)
+print(alphabet)
 
